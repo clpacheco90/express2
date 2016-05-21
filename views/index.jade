@@ -1,5 +1,45 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+ // Mixins
+ mixin input(type, label, name)
+   .input-container
+     //input(type='#{type}' id='#{label}' required)
+     input(type='#{type}' id='#{label}' name='#{name}' required)
+     label(for='#{label}')=label
+     .bar
+ mixin button(label)
+   .button-container
+     button(type='submit')
+       span=label
+
+
+ .pen-title
+   h1 Kosmos21
+   span
+     | Mostre seu sorriso ao mundo   
+
+ .container   
+   .card
+     h1.title Acessar
+     form(class='form-signin', action='/login', method='POST')
+       +input('text', 'Qual é seu email?','username')
+       +input('password', 'Qual é sua senha?','password')
+       +button('Entre')
+       .footer
+         a(href='#') Esqueceu sua senha?
+   #message
+    if message
+     h1 #{message}
+   .card.alt
+     .toggle
+     h1.title Registrar
+       .close
+     form(class='form-signin', action='/signup', method='POST')
+       +input('text', 'Como se chamará aqui?', 'username')
+       +input('password', 'Qual será sua senha?', 'password')
+       +input('email', 'Qual email deseja cadastrar?', 'email')
+       +button('Inscrever-se')
+   
+ // CodePen
+ a#codepen(href='http://canestechnologies.com/')
+   i.fa.fa-codepen
