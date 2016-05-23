@@ -83,7 +83,7 @@ var _dataListener = function (req, res) {
 		} else if (staticFiles[extension]) {
 			handle._static(res, pathname, postData);
 		} else {
-			respondWithHTTPCode(res, 404);
+			//respondWithHTTPCode(res, 404);
 		}
 	});
 };

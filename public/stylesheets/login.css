@@ -1,16 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+
 body {
   background: #2B2D42;
-  color: #666666;  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  color: #ececec;  font-family: 'RobotoDraft', 'Roboto', sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.hexagon {
+  position: relative;
+  width: 80px;
+  height: 46.19px;
+  margin: auto;
+  background-color: #f76;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  z-index: 2;
+}
+.hexagon:before, .hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+}
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 23.09px solid #f76;
+}
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 23.09px solid #f76;
+}
+.circle {
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 100%;
+  z-index: 3;
+  box-shadow: #2b2d42 0 0 0 4px;
+}
+
+h1 {  
+  position: relative;
+  font-family: "Fredoka One", sans-serif;
+  font-size: 36px;
+  text-align: center;
+  margin: -30px 0 60px;
+  -webkit-transform: translateY(24px);
+          transform: translateY(24px);
+  -webkit-transition: opacity 0s 1.42s ease-out, -webkit-transform 0s 1.42s ease-out;
+  transition: opacity 0s 1.42s ease-out, -webkit-transform 0s 1.42s ease-out;
+  transition: transform 0s 1.42s ease-out, opacity 0s 1.42s ease-out;
+  transition: transform 0s 1.42s ease-out, opacity 0s 1.42s ease-out, -webkit-transform 0s 1.42s ease-out;
+  z-index: 1;
+}
+h1 span {
+  color: #f76;
+}
+
 /* Pen Title */
 .pen-title {
-  padding: 50px 0;
-  text-align: center;
-  letter-spacing: 2px;
+  padding: 50px 0;  
 }
 .pen-title h1 {
   margin: 0 0 20px;
@@ -21,10 +78,10 @@ body {
   font-size: 12px;
 }
 .pen-title span .fa {
-  color: #EF6C00;
+  color: #f76;
 }
 .pen-title span a {
-  color: #EF6C00;
+  color: #f76;
   font-weight: 600;
   text-decoration: none;
 }
@@ -37,7 +94,7 @@ body {
 .rerun a {
   cursor: pointer;
   display: inline-block;
-  background: #EF6C00;
+  background: #f76;
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 10px 20px;
@@ -55,7 +112,7 @@ body {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: #5F3E6D;
+  background: #668dff;
   width: 56px;
   height: 56px;
   border-radius: 100%;
@@ -76,7 +133,7 @@ body {
 #portfolio {
   bottom: 96px;
   right: 36px;
-  background: #EF6C00;
+  background: #f76;
   width: 44px;
   height: 44px;
   -webkit-animation: buttonFadeInUp 1s ease;
@@ -188,13 +245,14 @@ body {
 .card .title {
   position: relative;
   z-index: 1;
-  border-left: 5px solid #EF6C00;
+  border-left: 5px solid #f76;
   margin: 0 0 35px;
   padding: 10px 0 10px 50px;
-  color: #EF6C00;
+  color: #f76;
   font-size: 24px;
   font-weight: 600;
   text-transform: uppercase;
+  text-align:left;
 }
 .card .input-container {
   position: relative;
@@ -247,7 +305,7 @@ body {
 .card .input-container .bar:before, .card .input-container .bar:after {
   content: '';
   position: absolute;
-  background: #EF6C00;
+  background: #f76;
   width: 0;
   height: 2px;
   -webkit-transition: .2s ease;
@@ -293,7 +351,7 @@ body {
   top: 50%;
   left: 50%;
   display: block;
-  background: #EF6C00;
+  background: #f76;
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -303,10 +361,10 @@ body {
   transition: .3s ease;
 }
 .card .button-container button:hover, .card .button-container button:active, .card .button-container button:focus {
-  border-color: #EF6C00;
+  border-color: #f76;
 }
 .card .button-container button:hover span, .card .button-container button:active span, .card .button-container button:focus span {
-  color: #EF6C00;
+  color: #f76;
 }
 .card .button-container button:active span, .card .button-container button:focus span {
   color: #ffffff;
@@ -352,7 +410,7 @@ body {
 }
 .card.alt .toggle {
   position: relative;
-  background: #EF6C00;
+  background: #f76;
   width: 64px;
   height: 64px;
   border-radius: 100%;
@@ -424,7 +482,7 @@ body {
   border-color: #ffffff;
 }
 .card.alt .button-container button span {
-  color: #EF6C00;
+  color: #f76;
 }
 .card.alt .button-container button:hover {
   background: rgba(255, 255, 255, 0.9);
